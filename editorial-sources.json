@@ -1,0 +1,19 @@
+{
+  "role": "editorial-cover",
+  "source_page": "https://since74.com/",
+  "retrieved_at": "2026-11-05",
+  "requested_by_owner": true,
+  "rights_confirmed": false,
+  "usage": "Local prototype only; public reuse rights not verified",
+  "is_product_photo": false,
+  "assets": [
+    {
+      "file": "images/editorial/since74-cover-desktop.jpg",
+      "source_url": "https://since74.com/cdn/shop/files/74_Gifting_Homesite_Desktop_Banner.jpg?v=1793319512&width=1600"
+    },
+    {
+      "file": "images/editorial/since74-cover-mobile.jpg",
+      "source_url": "https://since74.com/cdn/shop/files/74_Gifting_Homesite_Mobile_Banner.jpg?v=1793319511&width=768"
+    }
+  ]
+}
