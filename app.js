@@ -1,11 +1,11 @@
-import {initTelegram} from './telegram.js';
+import {initTelegram} from './telegram.js?v=usd-final-20261111';
 const $=s=>document.querySelector(s);
 const html=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
-import {loadCatalog} from './catalog.js';
-import {createRequestDraft} from './request-draft.js';
-import {changeCartVariant,parseRoute,cartChoice,resolveCartChoice} from './cart-edit.js';
-import {initPhotos,getPhoto} from './photos.js';
-import {restoreCart,restoreWishlist,requestText} from './state.js';
+import {loadCatalog} from './catalog.js?v=usd-final-20261111';
+import {createRequestDraft} from './request-draft.js?v=usd-final-20261111';
+import {changeCartVariant,parseRoute,cartChoice,resolveCartChoice} from './cart-edit.js?v=usd-final-20261111';
+import {initPhotos,getPhoto} from './photos.js?v=usd-final-20261111';
+import {restoreCart,restoreWishlist,requestText} from './state.js?v=usd-final-20261111';
 await initPhotos();
 let products=[],colors=[];
 try{({products,colors}=await loadCatalog())}catch(error){$('#main').innerHTML='<section class="empty"><h2>Catalog temporarily unavailable</h2><p>Refresh the page after checking the product catalog.</p></section>';throw error}
@@ -17,8 +17,8 @@ let editingSku=null,modalOrigin=null;
 const pageScroll=new Map();
 const icons={home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/>',catalog:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',bag:'<path d="M5 7h14l2 14H3L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/>',search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',close:'<path d="m6 6 12 12M6 18 18 6"/>',help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1.5 1-1.5 1-1.5 3m0 3h.01"/>'};
 function icon(name){return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name]||icons.arrow}</svg>`}
-const money=n=>new Intl.NumberFormat('en-US').format(n)+' RUB';
-function save(){try{localStorage.setItem('ugg-store-demo:v1:wish',JSON.stringify(wish));localStorage.setItem('ugg-store-demo:v1:cart',JSON.stringify(cart))}catch{toast('Your browser could not save the changes')}counts()}
+const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(n);
+function save(){try{localStorage.setItem('ugg-store-en:v1:wish',JSON.stringify(wish));localStorage.setItem('ugg-store-en:v1:cart',JSON.stringify(cart))}catch{toast('Your browser could not save the changes')}counts()}
 function counts(){telegramUI?.syncBack();const n=cart.reduce((s,i)=>s+i.qty,0);$('#cart-count').textContent=n||'';$('#wish-count').textContent=wish.length||'';document.querySelectorAll('[data-page]').forEach(b=>{const active=b.dataset.page===page;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')})}
 let toastTimer;function toast(t){$('#toast').textContent=t;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2600)}
 export function shoe(p,color=0){const photo=getPhoto(p.id,colors[color]?.name);return photo?`<img class="real-product-photo" src="${photo}" alt="UGG ${html(p.name)} — ${html(colors[color].name)}" decoding="async">`:'<span class="photo-pending" role="img" aria-label="Photo coming soon"><span>Photo coming soon</span></span>'}

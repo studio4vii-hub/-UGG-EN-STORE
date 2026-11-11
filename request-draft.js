@@ -9,5 +9,5 @@ export function createRequestDraft(values,cart,products,colors,createdAt=new Dat
   if(!variant||!Number.isInteger(item.qty)||item.qty<1||item.qty>20)throw Error('Обнови корзину перед сохранением запроса');
   return {...item,color:variant.color,size:variant.size,model:product.name,colorName:colors[variant.color].name,demoUnitPrice:variant.price};
  });
- return {createdAt,name,contact,comment,items,demo:true};
+ return {createdAt,name,contact,comment,items,demo:true,currency:'USD',conversionRateRubPerUsd:80};
 }

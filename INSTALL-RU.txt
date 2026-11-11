@@ -1,0 +1,12 @@
+UGG EN USD — инструкция установки
+
+1. Откройте GitHub репозиторий studio4vii-hub/-UGG-EN-STORE (проверьте имя).
+2. Распакуйте ZIP на ПК.
+3. В GitHub выберите Add file > Upload files, загрузите СОДЕРЖИМОЕ распакованной папки, а не ZIP и не внешнюю папку.
+4. При совпадении имён замените файлы и нажмите Commit changes. Убедитесь, что index.html, app.js и catalog.js находятся в корне.
+5. В Settings > Pages проверьте main / (root), Custom domain пустой.
+6. Дождитесь зелёной галочки именно pages build and deployment.
+7. Откройте https://studio4vii-hub.github.io/-UGG-EN-STORE/?v=usd-final-20261111 и нажмите Ctrl+Shift+R.
+8. Проверьте Classic Ultra Mini: 18 900 RUB -> $236.25. Если остались RUB, откройте опубликованный app.js и проверьте currency:USD — значит GitHub не получил обновление в корень.
+
+Курс условный: 80 RUB = 1 USD. Оригинал UGG RU не меняется.
