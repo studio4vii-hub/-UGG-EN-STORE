@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-11-05T10:42:52.986Z",
+  "ready": false,
+  "offers": 0,
+  "errors": [
+    "Нет подтверждённых предложений с publish=true",
+    "Заполните shop_name, company и публичный HTTPS shop_url в feed.config.json"
+  ]
+}

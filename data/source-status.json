@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-05",
+  "status": "photos_downloaded",
+  "seller": "UGG House",
+  "models": 8,
+  "downloaded_photos": 23,
+  "displayed_model_color_photos": 22,
+  "missing": [
+    {
+      "model": "Classic Ultra Mini Platform",
+      "color": "Sand",
+      "reason": "Exact matching source photograph not found"
+    },
+    {
+      "model": "Tazz",
+      "color": "Sand",
+      "reason": "Retailer image resembles Tasman; withheld pending verification"
+    }
+  ],
+  "notes": "Own prices and stock remain unverified. Photo rights remain unconfirmed. See photo-sources.csv."
+}
