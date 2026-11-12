@@ -103,3 +103,5 @@
 
 /* Telegram safe areas; plain browser values default to zero */
 body{padding-top:max(env(safe-area-inset-top,0px),var(--telegram-safe-top,0px));padding-left:max(env(safe-area-inset-left,0px),var(--telegram-safe-left,0px));padding-right:max(env(safe-area-inset-right,0px),var(--telegram-safe-right,0px))}.bottom-nav{padding-bottom:max(10px,env(safe-area-inset-bottom,0px),var(--telegram-safe-bottom,0px))}main{padding-bottom:calc(120px + max(env(safe-area-inset-bottom,0px),var(--telegram-safe-bottom,0px)))}
+/* White surfaces for bag cards and quantity controls. */
+.line-item,.summary,.qty,.qty button,.line-info .qty{background:#fff;}
