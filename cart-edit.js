@@ -9,7 +9,7 @@ export function changeCartVariant(cart,products,fromSku,toSku){
  if(!variant)throw Error('Этот вариант модели недоступен');
  if(fromSku===toSku)return cart.map(item=>({...item}));
  const target=cart.find(item=>item.sku===toSku);
- if((target?.qty||0)+source.qty>20)throw Error('В демо можно собрать до 20 pairs одного варианта');
+ if((target?.qty||0)+source.qty>20)throw Error('You can add up to 20 pairs of each variant');
  return cart.flatMap(item=>{
   if(item.sku===fromSku)return target?[]:[{...item,sku:variant.sku,color:variant.color,size:variant.size}];
   if(item.sku===toSku)return [{...item,qty:item.qty+source.qty}];
